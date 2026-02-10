@@ -2,44 +2,193 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My EC2 App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Sports Store</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
+        }
+
+        body {
+            background-color: #f3f4f6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #111827;
+            color: #fff;
+            padding: 15px 40px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
         }
 
-        .card {
-            background: #ffffff;
-            padding: 30px;
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #e5e7eb;
+            text-decoration: none;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            padding: 20px 40px;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #fff;
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 8px 0;
+            cursor: pointer;
+            color: #374151;
+        }
+
+        /* Products */
+        .products {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-card h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            background: #111827;
+            color: #cbd5f5;
             text-align: center;
-        }
-
-        h1 {
-            color: #2c3e50;
-        }
-
-        p {
-            color: #555;
+            padding: 15px;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>🚀 App Deployed on AWS EC2</h1>
-        <p>If you can see this page, your server is running successfully.</p>
-	<h1>Code added from vi editor</h1>
-	<h2>Code added from github</h2>
+    <!-- Navbar -->
+    <nav>
+        <h2>Sports Store</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li>Cricket</li>
+                <li>Football</li>
+                <li>Badminton</li>
+                <li>Gym</li>
+                <li>Accessories</li>
+            </ul>
+        </div>
+
+        <!-- Products -->
+        <div class="products">
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Cricket Bat">
+                <h4>Cricket Bat</h4>
+                <p>₹2,499</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Football">
+                <h4>Football</h4>
+                <p>₹999</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Badminton Racket">
+                <h4>Badminton Racket</h4>
+                <p>₹1,299</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Gym Gloves">
+                <h4>Gym Gloves</h4>
+                <p>₹499</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Sports Store
+    </footer>
 
 </body>
 </html>
